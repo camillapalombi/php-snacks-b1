@@ -78,7 +78,7 @@
         $name = $_GET['userName'];
         $email = $_GET['userEmail'];
         $age = $_GET['userAge'];
-        
+
         /*
         if (strlen($name) > 3) {
             echo 'ACCESSO RIUSCITO';
@@ -104,6 +104,28 @@
             echo 'ACCESSO NEGATO';
         }
 
+        ?>
+
+
+
+        <!--SNACK 4 -->
+        <!-- Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta -->
+        <h2> 15 NUMERI RANDOM DA 1 A 100:</h2>
+        <?php
+            $arr_random_num = [];
+
+            do {
+                $numbers = rand(1, 20);
+                if (in_array($numbers, $arr_random_num) == false) {
+                    $arr_random_num[] = "$numbers";
+                }
+            } while (count($arr_random_num) < 15);
+
+            echo "Numeri senza doppioni:\n";
+            foreach($arr_random_num as $numbers){
+                echo $numbers . "\n" . ', ';
+            };
+            
         ?>
 </body>
 </html>
