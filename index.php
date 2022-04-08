@@ -11,6 +11,7 @@
     <!-- Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
         Olimpia Milano - Cantù | 55-60 -->
     <ul>
+
     <?php
         $arr_partite_gg15 = [
             [
@@ -56,5 +57,53 @@
             <?php }
     ?>
     </ul> 
+
+
+
+    <!-- SNACK 2 -->
+        <!-- Passare come parametri GET name, mail e age e verificare
+         (cercando i metodi che non conosciamo nella documentazione)
+          che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola
+           e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
+        <form>
+        <label for=""> INSERISCI QUI I TUOI DATI: </label>
+        <input type="text" name="userName" placeholder="Inserisci nome">
+        <input type="text" name="userEmail" id="" placeholder="Inserisci email">
+        <input type="text" name="userAge" id="" placeholder="Inserisci età">
+        <button>ACCEDI</button>
+        </form>
+
+        <?php
+
+        $name = $_GET['userName'];
+        $email = $_GET['userEmail'];
+        $age = $_GET['userAge'];
+        
+        /*
+        if (strlen($name) > 3) {
+            echo 'ACCESSO RIUSCITO';
+        } else {
+            echo 'ACCESSO NEGATO';
+        }
+
+        if (strpos($email, '@') !== false) {
+            echo 'ACCESSO RIUSCITO';
+        } else {
+            echo 'ACCESSO NEGATO';
+        }
+
+        if (is_numeric($age)) {
+            echo 'ACCESSO RIUSCITO';
+        } else {
+            echo 'ACCESSO NEGATO';
+        }*/
+
+        if (strlen($name) > 3 && strpos($email, '@') !== false && is_numeric($age)) {
+            echo 'ACCESSO RIUSCITO';
+        } else {
+            echo 'ACCESSO NEGATO';
+        }
+
+        ?>
 </body>
 </html>
